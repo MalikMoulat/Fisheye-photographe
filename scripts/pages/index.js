@@ -1,4 +1,6 @@
     
+//fecth photographer data json file    
+
     async function getPhotographesJSON() {
         return fetch('../data/photographers.json')
             .then(res => res.json())
@@ -14,17 +16,23 @@
         photographers.forEach((photographer) => {
             const photographerModel = photographerFactory(photographer);
             const userCardDOM = photographerModel.getUserCardDOM();
-            photographersSection.appendChild(userCardDOM);
+            try {
+                photographersSection.appendChild(userCardDOM);
+                }catch{
+                    
+                }
         });
-    };
+    }
 
     async function init() {
         // Récupère les datas des photographes
         const photographers = await getPhotographesJSON();
         console.log("photographers", photographers);
         displayData(photographers);
-    };
+    }
     
     init();
-    
 
+
+
+    

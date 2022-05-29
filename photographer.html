@@ -1,10 +1,11 @@
 <!DOCTYPE html>
-<html>
+<html lang="fr">
   <head>
     <link href="css/style.css" rel="stylesheet" type="text/css" />
     <meta charset="utf-8">
     <link rel="icon" type="image/png" href="assets/favicon.png">
     <link href="https://fonts.googleapis.com/css?family=DM+Sans&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <title>Fisheye - photographe </title>
   </head>
   <body>
@@ -14,15 +15,21 @@
       </a>
     </header>
     <main id="main">
-      <div class="photograph-header">
-        <button class="contact_button" onclick="displayModal()">Contactez-moi</button>
-      </div>
+      <section class="photograph-header">
+       <!-- <button class="contact_button" onclick="displayModal()">Contactez-moi</button> -->
+      </section>
+      <section class="photograph-photo">
+
+      </section>
+      <section class="profil__likes__tarif">
+
+      </section>
     </main>
     <div id="contact_modal">
 			<div class="modal">
 				<header>
           <h2>Contactez-moi</h2>
-          <img src="assets/icons/close.svg" onclick="closeModal()" />
+          <img src="assets/icons/close.svg" onclick="closeModal()" alt="Fermer le formulaire de contact" />
         </header>
 				<form>
 					<div>
@@ -34,5 +41,11 @@
 			</div>
 		</div>
     <script src="/scripts/utils/contactForm.js"></script>
+    <script src="scripts/factories/photographer.js"></script>
+    <script src="scripts/factories/photographerMedia.js"></script>
+    <script src="scripts/factories/photographerPageHeader.js" ></script>
+    <script src="scripts/factories/phtographerPrice.js" ></script>
+    <script src="scripts/pages/index.js"></script>
+    <script src="scripts/pages/photographer.js"></script>
   </body>
 </html>

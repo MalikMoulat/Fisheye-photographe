@@ -6,6 +6,36 @@
     background-color: #FAFAFA;
     height: 300px;
     margin: 0 100px;
+    display: grid;
+}
+
+.photograph-header article {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 0 46px;
+}
+.photographer__profil__name {
+    font-size: 50px;
+    font-weight: lighter;
+    color: #d3593C;
+    margin: 0;
+}
+
+.photographer__profil__city{
+    margin: 2px 0 9px 0;
+    color: #901C1C;
+}
+
+.photographer__profil__tagline{
+    margin: 0;
+}
+
+.photographer__profil__img{
+    height: 200px;
+    width: 200px;
+    border-radius: 50%;
+    object-fit: cover;
 }
 
 .contact_button {
@@ -21,6 +51,75 @@
     cursor: pointer;
 }
 
+.photograph-photo {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 70px;
+    margin: 100px;
+}
+
+.photo__post{
+    width: auto;
+    position: relative;
+}
+
+.photo__img{
+    height: 350px;
+    width: 100%;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.photo__infos{
+    display: flex;
+    justify-content: space-between;
+}
+
+.photo__title{
+    margin: 0;
+    color: #901C1C;
+    
+}
+
+.photo__likes{
+    display: flex;
+    align-items: center;
+    color: #901C1C;
+    
+}
+
+.photo__like{
+    margin: 0;
+    margin-right: 5px;
+}
+
+
+
+
+
+.profil__likes__tarif{
+    position: fixed;
+    width: 200px;
+    height: 60px;
+    bottom: 0;
+    right: 40px;
+    background-color: #DB8876;
+    border-radius: 15px 15px 0 0;
+}
+
+
+
+#contact_modal{
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    overflow: auto;
+    background-color: rgba(26, 39, 156, 0.4);
+}
+
 .modal {
     border-radius: 5px;
     background-color: #DB8876;
@@ -30,7 +129,7 @@
     align-items: center;
     justify-content: space-between;
     padding: 35px;
-    margin: auto;
+    margin: 5% auto;
 }
 
 .modal header {
@@ -74,3 +173,5 @@ form input {
     border: none;
     border-radius: 5px;
 }
+
+

@@ -1,15 +1,13 @@
 function photographerFactory(data) {
 
-    this.name = data.name;
-    this.id = data.id;
-    this.city = data.city;
-    this.country = data.country;
-    this.tagline = data.tagline;
-    this.price = data.price;
-    this.portrait = data.portrait;
+    const name = data.name;
+    const id = data.id;
+    const city = data.city;
+    const country = data.country;
+    const tagline = data.tagline;
+    const price = data.price;
+    const portrait = data.portrait;
     
-    
-
     const picture = `assets/photographers/Sample Photos/Photographers ID Photos/${portrait}`;
 
 
@@ -19,7 +17,7 @@ function photographerFactory(data) {
         
         let card_photographer =
         `<a id="${id}" class="photographer__profil" href="photographer.html?id=${id}" aria-label="${name}">
-            <img class="photographer__profil__img" src="${picture}" alt="${name}">
+            <img class="photographer__profil__img" src="${picture}" alt="Photo de profil de ${name}">
             <h2 class="photographer__profil__name">${name}</h2>
         </a>
         <div class="photographer__infos">

@@ -19,9 +19,13 @@ h1 {
     margin-right: 100px;
 }
 
+#logo {
+    margin-left: 100px;
+}
+
 .logo {
     height: 50px;
-    margin-left: 100px;
+    
 }
 
 .photographer_section {
@@ -50,6 +54,7 @@ h1 {
     width: 200px;
     border-radius: 50%;
     object-fit: cover;
+
 }
 
 .photographer__profil {
@@ -69,3 +74,8 @@ h1 {
 .photographer__infos__city {
     color: #D3573C;
 }
+
+
+
+
+
