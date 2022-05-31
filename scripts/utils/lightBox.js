@@ -75,12 +75,13 @@ function openLightbox(index, title){
     console.log("SRC PHOTO", photosSrc);
     console.log("PHOTO TYPE", photoType);
     console.log('ID PHOTO', index);
+    console.log('TITLE', title);
 }
 
 
 // Gère la flèche gauche 
 function flecheGauche(index) {
-    let titreAvant = document.getElementsByClassName("photo")[index-1].getElementsByClassName("title__photo__ightbox")[0];
+    let titreAvant = document.getElementsByClassName("photo")[index-1].getElementsByClassName("photo__title")[0].innerHTML;
     openLightbox(index, titreAvant);
 }
 
@@ -90,10 +91,10 @@ function flecheDroite(index) {
     let totalPhoto = document.querySelectorAll(".photo").length;
     if (index === (totalPhoto)) {
         let titreApres = Array.from(document.querySelectorAll('.photo')).pop();
-        titreApres = titreApres.getElementsByClassName("title__photo__ightbox")[0];
+        titreApres = titreApres.getElementsByClassName("photo__title")[0].innerHTML;
         openLightbox(index, titreApres);
     } else {
-        let titreApres = document.getElementsByClassName("photo")[index-1].getElementsByClassName("title__photo__ightbox")[0];
+        let titreApres = document.getElementsByClassName("photo")[index-1].getElementsByClassName("photo__title")[0].innerHTML;
         openLightbox(index, titreApres);
     }
 }
