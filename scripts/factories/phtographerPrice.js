@@ -8,7 +8,7 @@ function photographerPriceFactory(data) {
     const price = data.price;
     const portrait = data.portrait;
     
-    const picture = `assets/photographers/Sample Photos/Photographers ID Photos/${portrait}`;
+    
 
 
     function photographerPrice() {

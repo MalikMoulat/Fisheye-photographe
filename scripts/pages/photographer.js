@@ -37,7 +37,6 @@ async function displayHeaderPhotographer(photographers) {
 
     async function initPhotographerHedaer() {
         const photographers = await getPhotographesJSON(); // Récupère les datas de media
-        console.log("Photographe", photographers);
         displayHeaderPhotographer(photographers);
     }
     
@@ -71,7 +70,6 @@ async function displayDataMedia(photographers) {
 
 async function initMedia() {
     const photographers = await getMediaJSON(); // Récupère les datas de media
-    console.log("Media", photographers);
     displayDataMedia(photographers);
 }
 
@@ -101,8 +99,37 @@ async function displayPricePhotographer(photographers) {
 
     async function initPhotographerPrice() {
         const photographers = await getPhotographesJSON(); // Récupère les datas de Photographe
-        console.log("Photographe", photographers);
         displayPricePhotographer(photographers);
     }
     
     initPhotographerPrice();
+
+
+    /***************************** Affiche Total Like */
+
+
+
+
+    async function displayTotalLike(photographers) {
+        const photographersSection = document.querySelector(".profil__likes__tarif");
+    
+        photographers.forEach((photographer) => {
+            const photographerModel = photographerTotalLikesFactory(photographer);
+            const userCardDOM = photographerModel.photographerTotalLike();
+            try {
+            photographersSection.appendChild(userCardDOM);
+            }catch{
+                
+            }
+           
+        });
+    }
+    
+    
+    async function initTotalLike() {
+        const photographers = await getMediaJSON(); // Récupère les datas de media
+        console.log("Media", photographers);
+        displayTotalLike(photographers);
+    }
+    
+    initTotalLike();

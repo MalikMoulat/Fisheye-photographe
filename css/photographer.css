@@ -95,11 +95,10 @@
 
 
 
-
-
 .profil__likes__tarif{
+    display: flex;
     position: fixed;
-    width: 200px;
+    /*width: 200px;*/
     height: 60px;
     bottom: 0;
     right: 40px;
@@ -107,7 +106,72 @@
     border-radius: 15px 15px 0 0;
 }
 
+.photographer__total__like{
+    display: flex;
+}
 
+
+
+
+
+
+
+
+/******** Ligthbox */
+
+#lightbox{
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    overflow: auto;
+    background-color: rgba(172, 172, 172, 0.625);
+    display: none;
+}
+
+.contenu__lightbox{
+    border: solid 2px #DB8876;
+    border-radius: 5px;
+    width: 90%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 35px;
+    margin: 5% auto;
+    position: relative;
+}
+
+.close__lightbox{
+    position: absolute;
+    top: 0;
+    right: 0;
+    color: #901C1C;
+    font-size: -webkit-xxx-large;
+}
+
+.fleche{
+    color: #901C1C;
+    font-size: -webkit-xxx-large;
+}
+
+#contenu__photo__lightbox img{
+    max-height: 500px;
+    max-width: 800px;
+    object-fit: cover;
+}
+
+
+
+
+
+
+
+
+
+
+/********** COntatc Modal */
 
 #contact_modal{
     position: fixed;
@@ -117,7 +181,7 @@
     height: 100%;
     width: 100%;
     overflow: auto;
-    background-color: rgba(26, 39, 156, 0.4);
+    background-color: rgba(139, 139, 139, 0.4);
 }
 
 .modal {
