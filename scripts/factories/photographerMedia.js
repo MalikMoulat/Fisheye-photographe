@@ -57,10 +57,10 @@ function photographerFactoryMedia(data) {
                 </a>    
                 <footer class="photo__infos">
                     <h2 class="photo__title">${title}</h2>
-                    <div class="photo__likes">
-                        <p class="photo__like">${likes}</p>
-                        <i class="fas fa-heart"></i>
-                    </div>
+                    <span class="photo__likes like__${id}">
+                        <span id="like__${id}" class="photo__like">${likes}</span>
+                        <i class="fas fa-heart like__heart__${id}" onclick="likeArticle(${id}, 'like')"></i>
+                    </span>
                 </footer>
                 `
                 

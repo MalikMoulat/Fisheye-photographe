@@ -105,31 +105,90 @@ async function displayPricePhotographer(photographers) {
     initPhotographerPrice();
 
 
-    /***************************** Affiche Total Like */
+  
 
 
 
 
-    async function displayTotalLike(photographers) {
-        const photographersSection = document.querySelector(".profil__likes__tarif");
-    
-        photographers.forEach((photographer) => {
-            const photographerModel = photographerTotalLikesFactory(photographer);
-            const userCardDOM = photographerModel.photographerTotalLike();
-            try {
-            photographersSection.appendChild(userCardDOM);
-            }catch{
-                
-            }
-           
-        });
+
+
+
+
+
+
+    /******** TOTALE LIKE */
+
+  function totaleLikes(){
+
+    let likesDom = document.getElementsByClassName('photo__like');
+
+    console.log("LIKE DOME", likesDom);
+
+
+
+
+
+
+  }
+
+
+  totaleLikes();
+
+
+
+
+
+  /********** Système LIKE */
+
+function likeArticle(id, type) {
+
+    // Récupère les éléments du DOM
+    let nbLike = document.getElementById("like__" + id).innerHTML;
+    nbLike = parseInt(nbLike);
+
+    let nbLikeTotal = document.getElementById('photographer__infos__likes').innerHTML;
+    nbLikeTotal = parseInt(nbLikeTotal);
+
+
+
+    let TEST = document.getElementsByClassName("like__heart__" + id)[0].style.color = "#db8876";
+
+    console.log("TEST", TEST);
+
+
+
+    console.log("NBLike", nbLike);
+    console.log("NBTotAL", nbLikeTotal);
+
+    // Gère le like
+    if (type == "like") {
+
+        nbLike = nbLike + 1;
+        nbLikeTotal = nbLikeTotal + 1;
+        //document.getElementsByClassName("Like__" + id)[0].getElementsByClassName("like__heart")[0].style.color = "#db8876";
+        document.getElementsByClassName("like__heart__" + id)[0].style.color = "#db8876";
+
+        //Change la fonction
+        //document.getElementsByClassName("like__" + id)[0].getElementsByClassName("like__heart")[0].setAttribute("onclick", "likeArticle('" + id + "', 'unlike')");
+        document.getElementsByClassName("like__heart__" + id)[0].setAttribute("onclick", "likeArticle('" + id + "', 'unlike')");
+    }else {
+
+        nbLike = nbLike - 1;
+        nbLikeTotal = nbLikeTotal - 1;
+        document.getElementsByClassName("like__heart__" + id)[0].style.color = "#901c1c";
+
+        // Change la fonction 
+        document.getElementsByClassName("like__heart__" + id)[0].setAttribute("onclick", "likeArticle('" + id + "', 'like')");
     }
-    
-    
-    async function initTotalLike() {
-        const photographers = await getMediaJSON(); // Récupère les datas de media
-        console.log("Media", photographers);
-        displayTotalLike(photographers);
-    }
-    
-    initTotalLike();
+    //change dans les éléments
+    document.getElementById("like__" + id).innerHTML = nbLike;
+    document.getElementById("photographer__infos__likes").innerHTML = nbLikeTotal;
+
+
+
+
+
+
+}
+
+

@@ -17,6 +17,8 @@ function openLightbox(index, title){
     // Obtient le nombre total de photos
     let totalPhoto = document.querySelectorAll('.photo').length;
 
+    console.log('LIGTH BOX', totalPhoto);
+
     // Récupère la photo lié à lindex
     let photos = document.getElementById(index);
 
