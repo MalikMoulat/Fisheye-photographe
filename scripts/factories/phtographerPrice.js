@@ -1,12 +1,12 @@
 function photographerPriceFactory(data) {
 
-    const name = data.name;
+  
     const id = data.id;
-    const city = data.city;
-    const country = data.country;
-    const tagline = data.tagline;
+  
+   
+  
     const price = data.price;
-    const portrait = data.portrait;
+   
     
     
 

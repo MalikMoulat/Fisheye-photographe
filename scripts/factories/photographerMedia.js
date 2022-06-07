@@ -8,14 +8,11 @@ function photographerFactoryMedia(data) {
     const video = data.video;
     const likes = data.likes;
     const date = data.date;
-    const price = data.price;
-
-    //console.log('photographe id', photographerId);
-    //console.log('id url', idUrl);
     
-    //console.log("NAME", name);
 
-    getThumbnail = () => {
+    
+
+    let getThumbnail = () => {
         if (image) {
             return `<img class="photo__img src__photo" src="assets/photographers/Sample_Photos/${idUrl}/${image}" alt="Nom de la photo: ${title}">`
         }
@@ -68,8 +65,6 @@ function photographerFactoryMedia(data) {
                
                 
                 return article;
-            }else{
-                //console.log("display photo", photographerId)
             }
 
     }

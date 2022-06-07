@@ -18,6 +18,12 @@ var url = new URL(str);
 var idUrl = url.searchParams.get("id");
 console.log("id", idUrl);
 
+
+
+
+
+
+/***************************************************************** */
 /************************* Affiche le profil du photographe header */
 
 
@@ -49,11 +55,11 @@ async function displayHeaderPhotographer(photographers) {
 
 
 
-
+/********************************************* */
 /************************* Affiche les photos  */
 
 async function displayDataMedia(photographers) {
-    const photographersSection = document.querySelector(".photograph-photo");
+    const photographersSection = document.querySelector(".photograph__photo");
 
     photographers.forEach((photographer) => {
         const photographerModel = photographerFactoryMedia(photographer);
@@ -79,7 +85,7 @@ initMedia();
 
 
 
-
+/*************************************************************** */
 /******************************** Affiche le prix du photographe */
 
 
@@ -116,29 +122,26 @@ async function displayPricePhotographer(photographers) {
 
 
 
-    /******** TOTALE LIKE */
-
-  function totaleLikes(){
-
-    let likesDom = document.getElementsByClassName('photo__like');
-
-    console.log("LIKE DOME", likesDom);
 
 
 
 
 
 
-  }
-
-
-  totaleLikes();
 
 
 
 
 
-  /********** Système LIKE */
+
+
+
+
+
+
+
+/*************************************************************** */
+/*********************************** Système LIKE ****************/
 
 function likeArticle(id, type) {
 
@@ -150,13 +153,6 @@ function likeArticle(id, type) {
     nbLikeTotal = parseInt(nbLikeTotal);
 
 
-
-    let TEST = document.getElementsByClassName("like__heart__" + id)[0].style.color = "#db8876";
-
-    console.log("TEST", TEST);
-
-
-
     console.log("NBLike", nbLike);
     console.log("NBTotAL", nbLikeTotal);
 
@@ -165,11 +161,9 @@ function likeArticle(id, type) {
 
         nbLike = nbLike + 1;
         nbLikeTotal = nbLikeTotal + 1;
-        //document.getElementsByClassName("Like__" + id)[0].getElementsByClassName("like__heart")[0].style.color = "#db8876";
         document.getElementsByClassName("like__heart__" + id)[0].style.color = "#db8876";
 
         //Change la fonction
-        //document.getElementsByClassName("like__" + id)[0].getElementsByClassName("like__heart")[0].setAttribute("onclick", "likeArticle('" + id + "', 'unlike')");
         document.getElementsByClassName("like__heart__" + id)[0].setAttribute("onclick", "likeArticle('" + id + "', 'unlike')");
     }else {
 
@@ -185,10 +179,159 @@ function likeArticle(id, type) {
     document.getElementById("photographer__infos__likes").innerHTML = nbLikeTotal;
 
 
-
-
-
-
 }
 
 
+
+
+
+
+/************************************************ */
+/************************************ TOTALE LIKE */
+
+
+
+
+
+
+
+/*
+function sumOfLike() {
+
+	const likeDom = document.getElementsByClassName('photo__like'); 
+
+    console.log("select", likeDom);
+
+	const likeDomArray = Array.from(likeDom, e => parseFloat(e.innerText));
+    
+    console.log('ARRAY', likeDomArray);
+
+	const reducer = (accumulator, currentValue) => accumulator + currentValue;
+	const sumOfLikes = likeDomArray.reduce(reducer);
+	
+    return console.log("SUM LIKE", sumOfLikes);
+    //return sumOfLikes;
+}
+
+sumOfLike();
+
+*/
+
+
+
+
+
+
+
+
+let totaleLikesData = [];
+
+
+
+  function totaleLikes(data){
+
+
+    
+    const photographerId = data.photographerId;
+    
+    const likes = data.likes;
+
+    let NbLikeTotale = 0;
+    
+
+    
+
+    function photographeTotaleLikes(){
+
+        
+
+            if (idUrl == photographerId){
+                //NbLikeTotale = NbLikeTotale + likes;
+
+                totaleLikesData.push(likes);
+
+                console.log("LIKE ID", likes);
+                
+            }
+        
+        //return totaleLikesData;
+        return totaleLikesData;
+        
+    }
+
+    return { photographeTotaleLikes }
+
+  }
+
+  
+
+
+  
+
+
+
+  async function displayTotaleLikePhotographer(photographers) {
+    const photographersSection = document.querySelector(".profil__likes__tarif");
+
+    photographers.forEach((photographer) => {
+        const photographerModel = totaleLikes(photographer);
+        const userCardDOM = photographerModel.photographeTotaleLikes();
+        try {
+            photographersSection.appendChild(userCardDOM);
+            }catch{
+                
+            }
+    });
+}
+
+    async function initPhotographerTotaleLikes() {
+        const photographers = await getMediaJSON(); // Récupère les datas de Photographe
+        displayTotaleLikePhotographer(photographers);
+    }
+    
+    initPhotographerTotaleLikes();
+
+
+
+
+
+
+
+
+
+
+
+/** Système de tri **/
+function photoSort(choixTrier) {
+    let listePhotos = document.querySelectorAll('.photo');
+    let tableauTrier = [];
+    for (let i = 0; i < listePhotos.length; i++) {
+        tableauTrier.push(listePhotos[i]);
+    }
+    switch (choixTrier.value) {
+        case "Popularité":
+            tableauTrier.sort(function (a, b) {
+                return a.dataset.likes - b.dataset.likes;
+            });
+            break;
+        case "Date":
+            tableauTrier.sort(function (a, b) {
+                return a.dataset.date.localeCompare(b.dataset.date);
+            });
+            break;
+        case "Titre":
+            tableauTrier.sort(function (a, b) {
+                return a.dataset.title.localeCompare(b.dataset.title);
+            });
+            break;
+        default:
+            break;
+    }
+    tableauTrier.forEach(function (photo, index) {
+        let indexModif = index + 1;
+        let titreModif = photo.dataset.titre;
+        photo.setAttribute("id", indexModif);
+        photo.getElementsByClassName("photographer__profil")[0].setAttribute("onclick", "openLightbox(" + `${indexModif}` + ", '" + titreModif + "')")
+        document.getElementById("profil__liste__photos").append(photo);
+    });
+}

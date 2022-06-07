@@ -16,22 +16,25 @@
     </header>
     <main id="main">
       <section class="photograph-header">
-       <!-- <button class="contact_button" onclick="displayModal()">Contactez-moi</button> -->
       </section>
+
+
       <div id="trier">
         <label class="trier__texte" for="select__trier">Trier par </label>
-        <select id="select__trier" >
-            <option disabled selected>---</option>
+        <select id="select__trier" onchange="photoSort(this)" >
             <option>Popularité</option>
             <option>Date</option>
             <option>Titre</option>
         </select>
       </div>
-      <section class="photograph-photo">
+
+
+      <section id="profil__liste__photos" class="photograph__photo">
 
       </section>
       <section class="profil__likes__tarif">
         <p id="photographer__infos__likes" >1</p>
+        <i class="fas fa-heart" ></i>
       </section>
     </main>
 

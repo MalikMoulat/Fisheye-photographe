@@ -5,7 +5,6 @@ function photographerFactoryHeaderProfil(data) {
     let city = data.city;
     let country = data.country;
     let tagline = data.tagline;
-    let price = data.price;
     let portrait = data.portrait;
 
     

@@ -3,7 +3,6 @@ function closeLightBox() {
     lightBox.style.display = "none";
     lightBox.setAttribute('aria-hidden', 'true');
 
-    //document.getElementsByClassName("close__lightbox").focus();
 
     const main = document.getElementById("main");
     main.setAttribute('aria-hidden', 'false');

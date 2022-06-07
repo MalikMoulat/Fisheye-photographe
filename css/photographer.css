@@ -51,12 +51,40 @@
     cursor: pointer;
 }
 
-.photograph-photo {
+#trier {
+    margin: 25px 100px;
+  }
+
+.trier__texte {
+    font-weight: bold;
+}
+
+select {
+    background-color: #901C1C;
+    border: none;
+    border-radius: 5px;
+    color: #ffffff;
+    font-size: 18px;
+    height: 40px;
+    padding: 0 5px;
+    width: 150px;
+}
+
+option {
+    border-top: 1px solid #ffffff;
+    background-color: #901C1C;
+    
+}
+
+
+
+.photograph__photo {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     gap: 70px;
-    margin: 100px;
+    margin: 40px 100px 100px 100px;
 }
+
 
 .photo__post{
     width: auto;
@@ -98,7 +126,7 @@
 .profil__likes__tarif{
     display: flex;
     position: fixed;
-    /*width: 200px;*/
+    align-items: center;
     height: 60px;
     bottom: 0;
     right: 40px;
