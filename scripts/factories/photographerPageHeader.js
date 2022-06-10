@@ -52,3 +52,5 @@ function photographerFactoryHeaderProfil(data) {
     }
     return { getUserCardDOM }
 }
+
+

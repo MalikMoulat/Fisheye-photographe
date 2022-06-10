@@ -38,3 +38,4 @@ function photographerPriceFactory(data) {
     }
     return { photographerPrice }
 }
+

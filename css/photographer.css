@@ -127,11 +127,21 @@ option {
     display: flex;
     position: fixed;
     align-items: center;
-    height: 60px;
+    height: 50px;
     bottom: 0;
     right: 40px;
     background-color: #DB8876;
-    border-radius: 15px 15px 0 0;
+    border-radius: 10px 10px 0 0;
+
+    padding: 0 10px 0 10px;
+}
+
+#photographer__infos__likes{
+    margin-right: 5px;
+}
+
+.photographer__price{
+    margin-left: 20px;
 }
 
 .photographer__total__like{

@@ -195,7 +195,7 @@ function likeArticle(id, type) {
 
 
 
-/*
+
 function sumOfLike() {
 
 	const likeDom = document.getElementsByClassName('photo__like'); 
@@ -208,88 +208,17 @@ function sumOfLike() {
 
 	const reducer = (accumulator, currentValue) => accumulator + currentValue;
 	const sumOfLikes = likeDomArray.reduce(reducer);
+
+    document.getElementById("photographer__infos__likes").innerHTML = sumOfLikes;
 	
     return console.log("SUM LIKE", sumOfLikes);
     //return sumOfLikes;
 }
 
-sumOfLike();
 
-*/
-
-
-
-
-
-
-
-
-let totaleLikesData = [];
-
-
-
-  function totaleLikes(data){
-
-
-    
-    const photographerId = data.photographerId;
-    
-    const likes = data.likes;
-
-    let NbLikeTotale = 0;
-    
-
-    
-
-    function photographeTotaleLikes(){
-
-        
-
-            if (idUrl == photographerId){
-                //NbLikeTotale = NbLikeTotale + likes;
-
-                totaleLikesData.push(likes);
-
-                console.log("LIKE ID", likes);
-                
-            }
-        
-        //return totaleLikesData;
-        return totaleLikesData;
-        
-    }
-
-    return { photographeTotaleLikes }
-
-  }
-
-  
-
-
-  
-
-
-
-  async function displayTotaleLikePhotographer(photographers) {
-    const photographersSection = document.querySelector(".profil__likes__tarif");
-
-    photographers.forEach((photographer) => {
-        const photographerModel = totaleLikes(photographer);
-        const userCardDOM = photographerModel.photographeTotaleLikes();
-        try {
-            photographersSection.appendChild(userCardDOM);
-            }catch{
-                
-            }
-    });
-}
-
-    async function initPhotographerTotaleLikes() {
-        const photographers = await getMediaJSON(); // Récupère les datas de Photographe
-        displayTotaleLikePhotographer(photographers);
-    }
-    
-    initPhotographerTotaleLikes();
+setTimeout(function(){
+    sumOfLike();
+},100)
 
 
 
@@ -298,10 +227,7 @@ let totaleLikesData = [];
 
 
 
-
-
-
-/** Système de tri **/
+// Système de tri
 function photoSort(choixTrier) {
     let listePhotos = document.querySelectorAll('.photo');
     let tableauTrier = [];
@@ -335,3 +261,28 @@ function photoSort(choixTrier) {
         document.getElementById("profil__liste__photos").append(photo);
     });
 }
+
+
+
+
+
+
+
+//get Name contact
+
+
+function getNameModaleCOntact(){
+
+    let name = document.getElementsByClassName('photographer__profil__name')[0].innerHTML;
+
+
+    console.log('NAME', name);
+
+
+}
+
+
+setTimeout(function(){
+    getNameModaleCOntact();
+},1000)
+
