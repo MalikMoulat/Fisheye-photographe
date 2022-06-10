@@ -167,10 +167,11 @@ option {
     overflow: auto;
     background-color: rgba(172, 172, 172, 0.625);
     display: none;
+    background-color: #ffffff;
 }
 
 .contenu__lightbox{
-    border: solid 2px #DB8876;
+    /*border: solid 2px #DB8876;*/
     border-radius: 5px;
     width: 90%;
     display: flex;
@@ -179,6 +180,11 @@ option {
     padding: 35px;
     margin: 5% auto;
     position: relative;
+    
+}
+
+.photo__titre__lightbox{
+    margin: auto;
 }
 
 .close__lightbox{
@@ -187,6 +193,7 @@ option {
     right: 0;
     color: #901C1C;
     font-size: -webkit-xxx-large;
+    margin: 21px 30px 0 0;
 }
 
 .fleche{
@@ -200,6 +207,17 @@ option {
     object-fit: cover;
 }
 
+#contenu__photo__lightbox video{
+    max-height: 500px;
+    max-width: 800px;
+    object-fit: cover;
+}
+
+#title__photo__lightbox{
+    color: #901C1C;
+    margin-top: 10px;
+    font-size: larger;
+}
 
 
 

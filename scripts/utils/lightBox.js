@@ -6,12 +6,18 @@ function closeLightBox() {
 
     const main = document.getElementById("main");
     main.setAttribute('aria-hidden', 'false');
+    main.style.display = "block";
 }
 
 
 
 
 function openLightbox(index, title){
+
+    // 
+    const main = document.getElementById("main");
+    main.setAttribute('aria-hidden', 'true');
+    main.style.display = "none";
 
     // Obtient le nombre total de photos
     let totalPhoto = document.querySelectorAll('.photo').length;
@@ -68,7 +74,7 @@ function openLightbox(index, title){
     }
 
     // Affiche le titre 
-    document.getElementById("title__photo__ightbox").innerHTML = title;
+    document.getElementById("title__photo__lightbox").innerHTML = title;
 
 
 
