@@ -18,3 +18,26 @@ function closeModal() {
     main.setAttribute('aria-hidden', 'false');
     main.style.display = "block";
 }
+
+
+
+//get Name contact
+
+
+function getNameModaleCOntact(){
+
+    let name = document.getElementsByClassName('photographer__profil__name')[0].innerHTML;
+
+    document.getElementById('name__photographer').innerHTML = name;
+
+    //document.getElementsByClassName('name__photographer').innerHTML = name;
+
+    console.log('NAME', name);
+
+
+}
+
+
+setTimeout(function(){
+    getNameModaleCOntact();
+},1000)

@@ -268,21 +268,5 @@ function photoSort(choixTrier) {
 
 
 
-//get Name contact
 
-
-function getNameModaleCOntact(){
-
-    let name = document.getElementsByClassName('photographer__profil__name')[0].innerHTML;
-
-
-    console.log('NAME', name);
-
-
-}
-
-
-setTimeout(function(){
-    getNameModaleCOntact();
-},1000)
 

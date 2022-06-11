@@ -246,7 +246,6 @@ option {
     width: 50%;
     display: flex;
     flex-direction: column;
-    align-items: center;
     justify-content: space-between;
     padding: 35px;
     margin: 5% auto;
@@ -265,6 +264,11 @@ option {
     font-size: 64px;
     font-weight: normal;
     text-align: center;
+}
+
+#name__photographer{
+    margin-top: 5px;
+    font-size: 50px;
 }
 
 form {
