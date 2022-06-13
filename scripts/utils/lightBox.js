@@ -76,6 +76,22 @@ function openLightbox(index, title){
     // Affiche le titre 
     document.getElementById("title__photo__lightbox").innerHTML = title;
 
+    /** Gére les flèches du clavier **/
+    document.onkeydown = function (event) {
+        /* Si la Lightbox est ouverte */
+        if (document.getElementById("lightbox").style.display === "block") {
+            switch (event.key) {
+                case 'ArrowLeft':
+                    flecheGauche(idPhoto - 1);
+                    break;
+                case 'ArrowRight':
+                    flecheDroite(idPhoto + 1);
+                default:
+                    break;
+            }
+        }
+    };
+
 
 
     

@@ -30,9 +30,9 @@ function photographerFactoryHeaderProfil(data) {
             <p class="photographer__profil__tagline">${tagline}</p>
         </div>
 
-        <button class="contact_button" onclick="displayModal()">Contactez-moi</button>
+        <button class="contact_button" alt="Contact me" onclick="displayModal()">Contactez-moi</button>
 
-        <img id="${id}" class="photographer__profil__img" src="${picture}" alt="Photo de profil de ${name}">
+        <img id="${id}" class="photographer__profil__img" src="${picture}" alt="${name}">
         `
         
         
