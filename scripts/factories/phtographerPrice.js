@@ -1,41 +1,15 @@
 function photographerPriceFactory(data) {
-
-  
-    const id = data.id;
-  
-   
-  
-    const price = data.price;
-   
-    
-    
-
+    const { id, price } = data;
 
     function photographerPrice() {
+        if (id == idUrl) {
+            const span = document.createElement('span');
+            span.classList.add('photographer__price');
+            const card_photographer = `<span class='photographer__infos__price'>${price}€/jour</span>`;
 
-        if(id == idUrl){
-
-        const span = document.createElement( 'span' );
-        span.classList.add('photographer__price');
-        
-        let card_photographer =
-        `
-            <p class="photographer__infos__price">${price}€/jour</p>
-        `
-        
-        span.innerHTML = card_photographer
-       
-        
-        return span;
-        
-        }else if (id != idUrl) {
-            //console.log("Erreur display profil", id)
-            
-            
-
+            span.innerHTML = card_photographer;
+            return span;
         }
-
     }
-    return { photographerPrice }
+    return { photographerPrice };
 }
-

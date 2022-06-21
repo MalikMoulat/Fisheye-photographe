@@ -42,12 +42,12 @@
 
     <section id="lightbox">
       <div class="contenu__lightbox" aria-label="image closeup view">
-          <span class="close__lightbox" aria-label="close dialog" onclick="closeLightBox()">
+          <span class="close__lightbox" aria-label="close dialog" tabindex="0" onclick="closeLightBox()">
             <i class="fas fa-times"></i>
           </span>
 
 
-          <span class="fleche" aria-label="Previous image" id="fleche-gauche">
+          <span class="fleche" aria-label="Previous image" id="fleche-gauche" tabindex="0">
             <i class="fas fa-chevron-left"></i>
           </span>
 
@@ -57,13 +57,13 @@
               <div id="contenu__photo__lightbox">
               </div>
               <span class="title-photo" >
-                <p id="title__photo__lightbox" >Title</p>
+                <span id="title__photo__lightbox" >Title</span>
               </span>
           </div>
 
           
 
-          <span class="fleche" aria-label="Next image" id="fleche-droite">
+          <span class="fleche" aria-label="Next image" id="fleche-droite" tabindex="0">
             <i class="fas fa-chevron-right"></i>
           </span>
           
@@ -77,7 +77,7 @@
 			<div class="modal">
 				<header>
           <h2>Contactez-moi</h2>
-          <img id="close__modal" src="assets/icons/close.svg" onclick="closeModal()" alt="Fermer le formulaire de contact" />
+          <img id="close__modal" src="assets/icons/close.svg" onclick="closeModal()" tabindex="0" alt="Fermer le formulaire de contact" />
         </header>
         <h3 id="name__photographer"></h3>
 				<form>
