@@ -54,7 +54,7 @@
 
 
           <div class="photo__titre__lightbox">
-              <div id="contenu__photo__lightbox">
+              <div id="contenu__photo__lightbox" tabindex="0">
               </div>
               <span class="title-photo" >
                 <span id="title__photo__lightbox" >Title</span>
@@ -73,7 +73,7 @@
 
 
 
-    <div id="contact_modal">
+    <div id="contact_modal" tabindex="-1">
 			<div class="modal">
 				<header>
           <h2>Contactez-moi</h2>
@@ -83,13 +83,17 @@
 				<form>
 					<label class="label-form">Prénom</label>
           <input title="Modifier le prénom" class="champ-form action-form" id="form-prenom" type="text" required>
+
           <label class="label-form">Nom</label>
           <input title="Modifier le nom" class="champ-form action-form" id="form-nom" type="text" required>
+
           <label class="label-form">Email</label>
           <input title="Modifier l'email" class="champ-form action-form" id="form-email" type="text" required>
+
           <label class="label-form">Votre message</label>
           <textarea title="Modifier le message" class="champ-form action-form" id="form-message" required></textarea>
-          <button class="contact_button">Envoyer</button>
+
+          <button class="form-button" onclick="validContactForm(event)">Envoyer</button>
 				</form>
 			</div>
 		</div>
