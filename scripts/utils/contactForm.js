@@ -1,65 +1,94 @@
-function displayModal() {
-    const modal = document.getElementById('contact_modal');
-    modal.style.display = 'block';
-    modal.setAttribute('aria-hidden', 'false');
-    modal.focus();
+// eslint-disable-next-line no-unused-vars
+function displayModal () {
+    const modal = document.getElementById('contact_modal')
+    modal.style.display = 'block'
+    modal.setAttribute('aria-hidden', 'false')
+    modal.focus()
 
-    const main = document.getElementById('main');
-    main.setAttribute('aria-hidden', 'true');
+    const main = document.getElementById('main')
+    main.setAttribute('aria-hidden', 'true')
 }
 
-function closeModal() {
-    const modal = document.getElementById('contact_modal');
-    modal.style.display = 'none';
-    modal.setAttribute('aria-hidden', 'true');
+function closeModal () {
+    const modal = document.getElementById('contact_modal')
+    modal.style.display = 'none'
+    modal.setAttribute('aria-hidden', 'true')
 
-    const main = document.getElementById('main');
-    main.setAttribute('aria-hidden', 'false');
+    const main = document.getElementById('main')
+    main.setAttribute('aria-hidden', 'false')
 }
 
 // Valide le formulaire
-function validContactForm(event) {
-    const nom = document.getElementById('form-nom').value;
-    const prenom = document.getElementById('form-prenom').value;
-    const email = document.getElementById('form-email').value;
-    const message = document.getElementById('form-message').value;
+// eslint-disable-next-line no-unused-vars
+function validContactForm (event) {
+    const nom = document.getElementById('form-nom').value
+    const prenom = document.getElementById('form-prenom').value
+    const email = document.getElementById('form-email').value
+    const message = document.getElementById('form-message').value
 
-    event.preventDefault();
+    event.preventDefault()
 
-    console.log('NOM :', nom);
-    console.log('PRENOM :', prenom);
-    console.log('ADRESSE EMAIL :', email);
-    console.log('MESSAGE :', message);
+    console.log('NOM :', nom)
+    console.log('PRENOM :', prenom)
+    console.log('ADRESSE EMAIL :', email)
+    console.log('MESSAGE :', message)
 }
 
 // Affiche le nom du photographe dans le modal de contact
-function getNameModaleCOntact() {
-    const name = document.getElementsByClassName('photographer__profil__name')[0].innerHTML;
-    document.getElementById('name__photographer').innerHTML = name;
-    console.log('NAME', name);
+function getNameModaleCOntact () {
+    const name = document.getElementsByClassName('photographer__profil__name')[0].innerHTML
+    document.getElementById('name__photographer').innerHTML = name
+    console.log('NAME', name)
 }
 
 setTimeout(function () {
-    getNameModaleCOntact();
-}, 1000);
+    getNameModaleCOntact()
+}, 1000)
 
-// Ferme le modal de contact clavier
+// Ferme le modal de contact clavier (escape)
 document.onkeydown = function (event) {
     // Si la modal est ouverte
     if (document.getElementById('contact_modal').style.display === 'block') {
-        switch (event.key) {
-            case 'Escape':
-                closeModal();
-            default:
-                break;
+        if (event.key === 'Escape') {
+            closeModal()
         }
     }
-};
+}
 
-const closeModalBtn = document.getElementById('close__modal');
+// Ferme le modal de contact clavier (enter)
+const closeModalBtn = document.getElementById('close__modal')
 
-closeModalBtn.addEventListener('keydown', (e)=> {
+closeModalBtn.addEventListener('keydown', (e) => {
     if (e.key === 'Enter') {
-        closeModal();
+        closeModal()
     }
 })
+
+// Like la photo avec entrer
+
+function likeWithEnter () {
+    const likeButton = document.getElementsByClassName('like-button')
+
+    for (let i = 0; i < likeButton.length; i++) {
+        likeButton[i].addEventListener('keydown', (e) => {
+            if (e.key === 'Enter') {
+                // Récupère l'id de l'élément
+                const buttonSrc = likeButton[i]
+                const getId = buttonSrc.getAttribute('id')
+
+                // Récupère la fonction likeArticle + les arguments
+                const getLikeOrUnlike = buttonSrc.getAttribute('onclick')
+
+                // eslint-disable-next-line no-eval
+                eval(getLikeOrUnlike)
+
+                console.log('ONCLICK', getLikeOrUnlike)
+                console.log('GET SRC', getId)
+            }
+        })
+     }
+}
+
+setTimeout(function () {
+    likeWithEnter()
+}, 2000)

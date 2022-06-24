@@ -1,15 +1,16 @@
-function photographerPriceFactory(data) {
-    const { id, price } = data;
+// eslint-disable-next-line no-unused-vars
+function photographerPriceFactory (data) {
+    const { id, price } = data
 
-    function photographerPrice() {
+    function photographerPrice () {
         if (id == idUrl) {
-            const span = document.createElement('span');
-            span.classList.add('photographer__price');
-            const card_photographer = `<span class='photographer__infos__price'>${price}€/jour</span>`;
+            const span = document.createElement('span')
+            span.classList.add('photographer__price')
+            const photographerPriceFooter = `<span class='photographer__infos__price'>${price}€/jour</span>`
 
-            span.innerHTML = card_photographer;
-            return span;
+            span.innerHTML = photographerPriceFooter
+            return span
         }
     }
-    return { photographerPrice };
+    return { photographerPrice }
 }
