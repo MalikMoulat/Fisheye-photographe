@@ -31,7 +31,7 @@ function photographerFactoryMedia (data) {
                 article.setAttribute('id', `${indexPhoto}`)
 
                 const displayPhotoAndVideo =
-                `<a class='photographer__profil' href='#' aria-label='${title}' onclick='openLightbox(${indexPhoto}, "${title}")'>
+                `<a class='photographer__profil' href='#' aria-label='${title}, vue rapprochée' onclick='openLightbox(${indexPhoto}, "${title}")'>
                     
                     ${DisplayImgVideo}
                 </a>    
@@ -39,7 +39,7 @@ function photographerFactoryMedia (data) {
                     <h2 class='photo__title'>${title}</h2>
                     <span aria-label='likes' class='photo__likes like__${id}'>
                         <span id='like__${id}' class='photo__like' aria-label="nombre de j'aimes ${likes}">${likes}</span>
-                        <i class='fas fa-heart like__heart__${id} like-button' id='${id}' aria-label='likes' role='button' tabindex='0' onclick='likeArticle(${id}, "like")'></i>
+                        <i class='fas fa-heart like__heart__${id} like-button icons-hover' id='${id}' aria-label="Bouton J'aime" role='button' tabindex='0' onclick='likeArticle(${id}, "like")'></i>
                     </span>
                 </footer>
                 `

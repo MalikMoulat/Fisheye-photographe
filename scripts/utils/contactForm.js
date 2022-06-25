@@ -63,32 +63,3 @@ closeModalBtn.addEventListener('keydown', (e) => {
         closeModal()
     }
 })
-
-// Like la photo avec entrer
-
-function likeWithEnter () {
-    const likeButton = document.getElementsByClassName('like-button')
-
-    for (let i = 0; i < likeButton.length; i++) {
-        likeButton[i].addEventListener('keydown', (e) => {
-            if (e.key === 'Enter') {
-                // Récupère l'id de l'élément
-                const buttonSrc = likeButton[i]
-                const getId = buttonSrc.getAttribute('id')
-
-                // Récupère la fonction likeArticle + les arguments
-                const getLikeOrUnlike = buttonSrc.getAttribute('onclick')
-
-                // eslint-disable-next-line no-eval
-                eval(getLikeOrUnlike)
-
-                console.log('ONCLICK', getLikeOrUnlike)
-                console.log('GET SRC', getId)
-            }
-        })
-     }
-}
-
-setTimeout(function () {
-    likeWithEnter()
-}, 2000)

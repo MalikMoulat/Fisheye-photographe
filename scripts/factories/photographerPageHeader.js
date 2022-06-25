@@ -13,7 +13,7 @@ function photographerFactoryHeaderProfil (data) {
             <p class='photographer__profil__tagline'>${tagline}</p>
         </div>
 
-        <button class='contact_button' aria-label='Contact me' onclick='displayModal()'>Contactez-moi</button>
+        <button class='contact_button' aria-label='Contactez-moi' onclick='displayModal()'>Contactez-moi</button>
 
         <img id='${id}' class='photographer__profil__img' src='${picture}' alt='${name}'>
         `

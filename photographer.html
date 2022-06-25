@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="fr">
   <head>
-    <link href="css/style.css" rel="stylesheet" type="text/css" />
+    <link href="css/style.css" rel="stylesheet">
     <meta charset="utf-8">
     <link rel="icon" type="image/png" href="assets/favicon.png">
     <link href="https://fonts.googleapis.com/css?family=DM+Sans&display=swap" rel="stylesheet">
@@ -16,6 +16,8 @@
     </header>
     <main id="main">
       <section class="photograph-header">
+        <h2 class="hiden">Photographer header</h2>
+        <!-- Injection de l'élément généré avec JavaScript ici -->
       </section>
 
 
@@ -30,10 +32,14 @@
 
 
       <section id="profil__liste__photos" class="photograph__photo">
-
+        <h2 class="hiden">Photographer photo</h2>
+        <!-- Injection de l'élément généré avec JavaScript ici -->
       </section>
+
       <section class="profil__likes__tarif">
-        <p id="photographer__infos__likes" ></p>
+        <p id="photographer__infos__likes" >
+          <!-- Injection de l'élément généré avec JavaScript ici -->
+        </p>
         <i class="fas fa-heart" ></i>
       </section>
     </main>
@@ -41,30 +47,34 @@
 
 
     <section id="lightbox">
-      <div class="contenu__lightbox" aria-label="image closeup view">
-          <span class="close__lightbox" aria-label="close dialog" tabindex="0" onclick="closeLightBox()">
-            <i class="fas fa-times"></i>
+      <h2 class="hiden">Light box</h2>
+      <div class="contenu__lightbox" aria-label="vue rapprochée de l'image" tabindex="0">
+          <span class="close__lightbox" aria-label="fermer la boîte de dialogue" tabindex="0" onclick="closeLightBox()">
+            <i class="fas fa-times icons-hover"></i>
           </span>
 
 
-          <span class="fleche" aria-label="Previous image" id="fleche-gauche" tabindex="0">
-            <i class="fas fa-chevron-left"></i>
+          <span class="fleche" aria-label="Image précédente" id="fleche-gauche" tabindex="0">
+            <i class="fas fa-chevron-left icons-hover"></i>
           </span>
 
 
 
           <div class="photo__titre__lightbox">
               <div id="contenu__photo__lightbox" tabindex="0">
+                <!-- Injection de l'élément généré avec JavaScript ici -->
               </div>
               <span class="title-photo" >
-                <span id="title__photo__lightbox" >Title</span>
+                <span id="title__photo__lightbox" >
+                  <!-- Injection de l'élément généré avec JavaScript ici -->
+                </span>
               </span>
           </div>
 
           
 
-          <span class="fleche" aria-label="Next image" id="fleche-droite" tabindex="0">
-            <i class="fas fa-chevron-right"></i>
+          <span class="fleche" aria-label="Image suivante" id="fleche-droite" tabindex="0">
+            <i class="fas fa-chevron-right icons-hover"></i>
           </span>
           
       </div>
@@ -73,7 +83,8 @@
 
 
 
-    <div id="contact_modal" tabindex="-1">
+    <section id="contact_modal" tabindex="-1">
+      <h2 class="hiden">Formulaire de contact</h2>
 			<div class="modal">
 				<header>
           <h2>Contactez-moi</h2>
@@ -81,22 +92,22 @@
         </header>
         <h3 id="name__photographer"></h3>
 				<form>
-					<label class="label-form">Prénom</label>
-          <input title="Modifier le prénom" class="champ-form action-form" id="form-prenom" type="text" required>
+					<label id="prenom" class="label-form">Prénom</label>
+          <input title="Modifier le prénom" class="champ-form action-form" id="form-prenom" type="text" name="prenom" aria-label="Entrée votre prénom" required>
 
-          <label class="label-form">Nom</label>
-          <input title="Modifier le nom" class="champ-form action-form" id="form-nom" type="text" required>
+          <label id="nom" class="label-form">Nom</label>
+          <input title="Modifier le nom" class="champ-form action-form" id="form-nom" type="text" aria-label="Entrée votre nom" required>
 
-          <label class="label-form">Email</label>
-          <input title="Modifier l'email" class="champ-form action-form" id="form-email" type="text" required>
+          <label id="email" class="label-form">Email</label>
+          <input title="Modifier l'email" class="champ-form action-form" id="form-email" type="text" aria-label="Entrée votre email" required>
 
-          <label class="label-form">Votre message</label>
-          <textarea title="Modifier le message" class="champ-form action-form" id="form-message" required></textarea>
+          <label id="votre-message" class="label-form">Votre message</label>
+          <textarea title="Modifier le message" class="champ-form action-form" id="form-message" aria-label="Entrée votre méssage" required></textarea>
 
           <button class="form-button" onclick="validContactForm(event)">Envoyer</button>
 				</form>
 			</div>
-		</div>
+		</section>
 
 
 

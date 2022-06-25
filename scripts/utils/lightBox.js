@@ -6,6 +6,10 @@ function closeLightBox () {
     const main = document.getElementById('main')
     main.setAttribute('aria-hidden', 'false')
     main.style.display = 'block'
+
+    const headerLogo = document.getElementById('logo')
+    headerLogo.setAttribute('aria-hiden', 'false')
+    headerLogo.style.display = 'block'
 }
 
 function openLightbox (index, title) {
@@ -13,6 +17,10 @@ function openLightbox (index, title) {
     const main = document.getElementById('main')
     main.setAttribute('aria-hidden', 'true')
     main.style.display = 'none'
+
+    const headerLogo = document.getElementById('logo')
+    headerLogo.setAttribute('aria-hiden', 'true')
+    headerLogo.style.display = 'none'
 
     // Obtient le nombre total de photos
     const totalPhoto = document.querySelectorAll('.photo').length

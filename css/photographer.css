@@ -111,7 +111,6 @@ option {
 .photo__title{
     margin: 0;
     color: #901C1C;
-    
 }
 
 .photo__likes{
@@ -326,3 +325,10 @@ form textarea {
     margin-top: 15px;
 }
 
+
+
+/* Icons hover ****/
+
+.icons-hover:hover, .icons-hover:focus {
+    color: #DB8876;
+}
