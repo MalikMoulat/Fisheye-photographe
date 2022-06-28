@@ -1,3 +1,4 @@
+// Photographer page header
 // eslint-disable-next-line no-unused-vars
 function photographerFactoryHeaderProfil (data) {
     const { name, id, city, country, tagline, portrait } = data

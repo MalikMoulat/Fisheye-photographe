@@ -1,3 +1,4 @@
+// Prix du photographe photographer page
 // eslint-disable-next-line no-unused-vars
 function photographerPriceFactory (data) {
     const { id, price } = data

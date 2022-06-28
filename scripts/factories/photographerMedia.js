@@ -1,4 +1,4 @@
-// photgrapher page
+// photgrapher page Media
 // eslint-disable-next-line no-unused-vars
 function photographerFactoryMedia (data) {
     const { id, photographerId, title, image, video, likes, date } = data
