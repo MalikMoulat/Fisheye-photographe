@@ -24,11 +24,15 @@
 
       <div id="trier">
         <label class="trier__texte" for="select__trier">Trier par </label>
+        <div class="select">
         <select id="select__trier" onchange="photoSort(this)" >
-            <option>Popularité</option>
             <option>Date</option>
+            <option disabled="disabled" aria-hidden="true">───────</option>
+            <option>Popularité</option>
+            <option disabled="disabled" aria-hidden="true">───────</option>
             <option>Titre</option>
         </select>
+        </div>
       </div>
 
 
@@ -95,15 +99,19 @@
 				<form>
 					<label id="prenom" class="label-form">Prénom</label>
           <input title="Modifier le prénom" class="champ-form action-form" id="form-prenom" type="text" name="prenom" aria-label="Entrée votre prénom" required>
+          <p id="error-prenom"></p>
 
           <label id="nom" class="label-form">Nom</label>
           <input title="Modifier le nom" class="champ-form action-form" id="form-nom" type="text" aria-label="Entrée votre nom" required>
+          <p id="error-nom"></p>
 
           <label id="email" class="label-form">Email</label>
           <input title="Modifier l'email" class="champ-form action-form" id="form-email" type="text" aria-label="Entrée votre email" required>
+          <p id="error-email"></p>
 
           <label id="votre-message" class="label-form">Votre message</label>
           <textarea title="Modifier le message" class="champ-form action-form" id="form-message" aria-label="Entrée votre méssage" required></textarea>
+          <p id="error-message"></p>
 
           <button class="form-button" onclick="validContactForm(event)">Envoyer</button>
 				</form>

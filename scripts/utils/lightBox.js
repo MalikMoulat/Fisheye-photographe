@@ -35,6 +35,9 @@ function openLightbox (index, title) {
 
     // Obtient le type de l'image
     const photoType = photosSrc.split('.').pop()
+
+    console.log('PHOTO TYPR', photosSrc)
+
     let photoFormat = ''
     if (photoType === 'jpg' || photoType === 'jpeg' || photoType == 'gif' || photoType === 'png') {
         photoFormat = 'image'
